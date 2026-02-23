@@ -56,12 +56,16 @@ if monto >= 200:
     print(f"Por haber tenido un monto de S/{monto}")
     print(f"Recibira un descuento del 20%")
     descuento = monto * 0.20
-    print(f"Solo pagara S/{descuento}")
+    total = monto - descuento
+    print(f"Descuento: S/{descuento}")
+    print(f"Total a pagar: S/{total:.2ff}")
 elif monto >= 100:
     print(f"Por haber tenido un monto de S/{monto}")
     print(f"Recibira un descuento del 10%")
     descuento = monto * 0.10
-    print(f"Solo pagara S/{descuento}")
+    total = monto - descuento
+    print(f"Descuento: S/{descuento}")
+    print(f"Total a pagar: S/{total:.2ff}")
 elif monto >= 0:
     print(f"Por haber tenido un monto de S/{monto}")
     print(f"No pudo recibir un descuento")
@@ -84,16 +88,16 @@ print(f"\n" + "=" * 40)
 print(f"=====CinePlanet=====")
 edad = int(input("Ingrese su edad:"))
 
-if edad <= 5:
+if edad < 5:
     print(f"Tendras una entrada gratis")
-elif edad >= 5:
-    print(f"La entrada te costara S/5")
-elif edad >= 13:
-    print(f"La entrada te costara S/8")
-elif edad >= 18:
-    print(f"La entrada te costara S/12")
-elif edad >= 65:
-    print(f"La entrada te costara S/6")
+elif edad <= 5:
+    print("Entrada niño: S/5")
+elif edad <= 13:
+    print("Entrada adolescente: S/8")
+elif edad <= 18:
+    print("Entrada adulto: S/12")
+elif edad <= 65:
+    print("Entrada adulto mayor: S/6")
 print("=" * 40 )
 
 # EJERCICIO 5: Validador de contraseña
@@ -151,7 +155,7 @@ contraseñaAdmin = "python123"
 usuario = input("Ingrese su Usuario:")
 contraseña1 = input("Ingrese su contraseña:")
 
-if usuario == usuarioAdmin and contraseña == contraseñaAdmin:
+if usuario == usuarioAdmin and contraseña1 == contraseñaAdmin:
     print(f"Acceso Adminstrador valido.")
 else:
     print(f"Acceso denegado")
